@@ -26,7 +26,7 @@ public class ContractServiceImpl implements ContractService {
     @Override
     public List<ContractDto> findAllContracts() {
         return contractRepository.findAll().stream()
-                .map(c -> ContractDto.create(c.getContractId(), c.getContractDate(), c.getUpdatedAt(), checkByUpdateDate(c.getUpdatedAt())))
+                .map(c -> ContractDto.create(c.getContractId(), c.getContractDate(), c.getUpdatedAt().toLocalDate(), checkByUpdateDate(c.getUpdatedAt())))
                 .collect(Collectors.toList());
     }
 

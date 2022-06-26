@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 public class ContractDto {
     private @Getter String contractId;
     private @Getter LocalDate date;
-    private @Getter LocalDateTime updateDate;
+    private @Getter LocalDate updateDate;
     private @Getter boolean checkBox;
 
     private ContractDto(){
@@ -20,7 +20,7 @@ public class ContractDto {
 
     public static ContractDto create(String contractId,
                               LocalDate date,
-                              LocalDateTime updateDate,
+                              LocalDate updateDate,
                               boolean checkBox){
         ContractDto dto = new ContractDto();
         dto.contractId = contractId;
