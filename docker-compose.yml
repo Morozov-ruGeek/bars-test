@@ -1,0 +1,15 @@
+version: '2.4'
+
+services:
+
+  contracts:
+    image: postgres:14.1-alpine
+    container_name: contract
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./.docker/database/init/contract:/docker-entrypoint-initdb.d/
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: contracts
